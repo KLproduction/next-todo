@@ -2,6 +2,11 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { auth } from "../auth"
+import { SignOut } from "./signOut";
+
+
+
 
 
 const navList = [
@@ -18,18 +23,31 @@ const navList = [
 
 const Navbar = async() => {
 
-
+  const session = await auth()
+  console.log(session)
 
 
   return (
-    <nav className='sticky z-[100] h-20 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
-      <ul className='flex h-20 items-center justify-around'>
+    <nav className='sticky z-[100] h-30 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
+      <ul className='flex items-center justify-around'>
         {navList.map(({ label, path }) => (
           <li key={label}>
             <Link href={path}>{label}</Link>
           </li>
         ))}
+        {session ? 
+          <div className="flex gap-3 items-center justify-center">
+            <p>Hello {session?.user?.name}</p>
+            <SignOut/>
+          </div>
+        :
+          <Button asChild>
+            <Link href='/login'>Sign In</Link>
+          </Button>
+
         
+      }
+
       </ul>
     </nav>
   );
