@@ -2,9 +2,6 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import PrivatePage from "@/app/private/page";
-import { createClient } from '@/lib/supabase/server'
-import SignOutBtn from "./SignOut/SignOutBtn";
 
 
 const navList = [
@@ -16,20 +13,11 @@ const navList = [
         label: "ToDo",
         path: "/todo",
     },
-    {
-        label: "Private",
-        path: "/private",
-    },
+
 ];
 
 const Navbar = async() => {
 
-
-  const supabase = createClient()
-  const { data, error } = await supabase.auth.getUser()
-  if (error ) {
-    console.log("no data")
-  }
 
 
 
@@ -41,18 +29,6 @@ const Navbar = async() => {
             <Link href={path}>{label}</Link>
           </li>
         ))}
-        {
-        data.user ? 
-        <div className="flex flex-col justify-center  items-center gap-3">
-          <p>Hello {data.user.email}</p>
-          <SignOutBtn/>
-        </div>
-        :
-        <Button asChild>
-          <Link href="/login">Sign In</Link>
-        </Button>
-        
-      }
         
       </ul>
     </nav>
