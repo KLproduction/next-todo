@@ -35,18 +35,24 @@ const Navbar = async() => {
             <Link href={path}>{label}</Link>
           </li>
         ))}
-        {session ? 
+        {/* {!session ? 
+          <Button asChild>
+            <Link href='/login'>Sign In</Link>
+          </Button>
+        :
           <div className="flex gap-3 items-center justify-center">
             <p>Hello {session?.user?.name}</p>
             <SignOut/>
           </div>
-        :
+      } */}
+
           <Button asChild>
             <Link href='/login'>Sign In</Link>
           </Button>
-
-        
-      }
+          <div className="flex gap-3 items-center justify-center">
+            <p>Hello {session?.user?.name}</p>
+            <SignOut/>
+          </div>
 
       </ul>
     </nav>
