@@ -11,6 +11,7 @@ const endpointSecret = process.env.WEBHOOK_SECRET;
 export const config = {
   api: {
     bodyParser: false,
+    sizeLimit: "1mb",
   },
 };
 
