@@ -8,14 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 
 const endpointSecret = process.env.WEBHOOK_SECRET;
 
-export const config = {
-  api: {
-    bodyParser: false,
-    sizeLimit: "1mb",
-  },
-};
-
-export default async function POST(req, res) {
+export default async function handler(req, res) {
   try {
     if (req.method !== "POST")
       return res.status(405).send("Only POST requests allowed");
