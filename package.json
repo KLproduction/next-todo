@@ -14,18 +14,24 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@supabase/ssr": "^0.3.0",
     "@supabase/supabase-js": "^2.43.4",
+    "and": "^0.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.394.0",
+    "micro": "^10.0.1",
     "next": "14.2.3",
     "next-auth": "^5.0.0-beta.19",
+    "raw-body": "^2.5.2",
     "react": "^18",
     "react-dom": "^18",
+    "stripe": "^15.10.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/react": "18.3.3",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.4.5"
   }
 }

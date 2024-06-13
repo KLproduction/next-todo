@@ -1,5 +1,5 @@
 
-import { cn } from "@/lib/utils";
+
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { auth } from "../auth"
@@ -17,6 +17,10 @@ const navList = [
     {
         label: "ToDo",
         path: "/todo",
+    },
+    {
+        label: "Pay",
+        path: "/payment",
     },
 
 ];

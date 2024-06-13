@@ -1,8 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { cn } from "@/lib/utils";
-import Navbar from "@/components/Navbar";
+import { cn } from "../lib/utils";
+import Navbar from "../components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
